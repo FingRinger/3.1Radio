@@ -5,6 +5,7 @@ public class Radio {
     private int currentVolume;
     private int maxVolume;
     private int minVolume;
+    private int increaseVolume;
 
 
     public int getCurrentStation() {
@@ -34,10 +35,14 @@ public class Radio {
         if (currentVolume < 0) {
             currentVolume = 0;
         }
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
+
         this.currentVolume = currentVolume;
     }
 
-
-
-
 }
+
+
+

@@ -5,30 +5,47 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RadioTest {
 
     @Test
-    public void volumeMoreThen10 () {
+    public void volumeMoreThen10() {
         Radio radio = new Radio();
         assertEquals(0, radio.getCurrentVolume());
         radio.setCurrentVolume(11);
-        assertEquals(10,radio.getCurrentVolume());
+        assertEquals(10, radio.getCurrentVolume());
 
     }
+
     @Test
     public void volumeLessThen0() {
-        Radio radio =new Radio();
+        Radio radio = new Radio();
         radio.setCurrentVolume(-3);
-        assertEquals(0,radio.getCurrentVolume());
+        assertEquals(0, radio.getCurrentVolume());
+    }
+
+    @Test
+    public void changeVolume() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(6);
+        assertEquals(7, radio.getCurrentVolume());
     }
 
     @Test
     public void StationMoreThen9() {
-        Radio radio =new Radio();
+        Radio radio = new Radio();
         radio.setCurrentStation(10);
-        assertEquals(0,radio.getCurrentStation());
-      }
+        assertEquals(0, radio.getCurrentStation());
+    }
+
     @Test
     public void StationLessThen9() {
-        Radio radio =new Radio();
+        Radio radio = new Radio();
         radio.setCurrentStation(-1);
-        assertEquals(9,radio.getCurrentStation());
+        assertEquals(9, radio.getCurrentStation());
+    }
+
+    @Test
+    public void currentStation() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(5);
+        assertEquals(5, radio.getCurrentStation());
+
     }
 }
