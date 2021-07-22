@@ -3,12 +3,10 @@ package ru.netology.domain;
 public class Radio {
     private int currentStation;
     private int currentVolume;
-    private int maxVolume;
-    private int minVolume;
-    private int increaseVolume;
 
 
     public int getCurrentStation() {
+
         return currentStation;
     }
 
@@ -23,11 +21,14 @@ public class Radio {
         this.currentStation = currentStation;
     }
 
-
+    //ниже реализация пункта 1
     public int getCurrentVolume() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
         return currentVolume;
     }
-
+    //ниже реализация пунктов 2 и 3
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume > 10) {
             currentVolume = 10;
@@ -35,14 +36,12 @@ public class Radio {
         if (currentVolume < 0) {
             currentVolume = 0;
         }
-        if (currentVolume < 10) {
-            currentVolume = currentVolume + 1;
-        }
 
         this.currentVolume = currentVolume;
     }
 
-}
+
+    }
 
 
 

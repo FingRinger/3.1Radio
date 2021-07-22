@@ -19,12 +19,11 @@ public class RadioTest {
         radio.setCurrentVolume(-3);
         assertEquals(0, radio.getCurrentVolume());
     }
-
     @Test
-    public void changeVolume() {
+    public void IncreasingVolume() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(6);
-        assertEquals(7, radio.getCurrentVolume());
+        radio.getCurrentVolume();
+        assertEquals(1, radio.getCurrentVolume());
     }
 
     @Test
