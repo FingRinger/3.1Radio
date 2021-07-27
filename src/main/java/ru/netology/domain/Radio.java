@@ -2,7 +2,37 @@ package ru.netology.domain;
 
 public class Radio {
     private int currentStation;
+    private int maxStation = 9;
+    private int minStation = 0;
     private int currentVolume;
+    private int maxVolume = 10;
+    private int minVolume = 0;
+
+    public int getCurrentVolume() {
+
+        return currentVolume;
+    }
+
+
+    public void setCurrentVolume(int currentVolume) {
+        this.currentVolume = currentVolume;
+    }
+
+
+    public void plusVolume() {
+        if (currentVolume >= maxVolume) {
+            return;
+        }
+            this.currentVolume = currentVolume + 1;
+        }
+
+
+    public void minusVolume() {
+        if (currentVolume == minVolume) {
+            return;
+        }
+            this.currentVolume = currentVolume - 1;
+        }
 
 
     public int getCurrentStation() {
@@ -10,38 +40,29 @@ public class Radio {
         return currentStation;
     }
 
-    public void setCurrentStation(int currentStation) {
-        if (currentStation > 9) {
+    public void nextStation() {
+        if (currentStation >= maxStation) {
             currentStation = 0;
         }
-        if (currentStation < 0) {
+    }
+
+    public void prevStation() {
+        if (currentStation <= minStation) {
             currentStation = 9;
         }
+    }
 
+    public void setCurrentStation(int currentStation) {
+        if (currentStation > maxStation) {
+            return;
+        }
+        if (currentStation < minStation) {
+            return;
+        }
         this.currentStation = currentStation;
     }
+}
 
-    //ниже реализация пункта 1
-    public int getCurrentVolume() {
-        if (currentVolume < 10) {
-            currentVolume = currentVolume + 1;
-        }
-        return currentVolume;
-    }
-    //ниже реализация пунктов 2 и 3
-    public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > 10) {
-            currentVolume = 10;
-        }
-        if (currentVolume < 0) {
-            currentVolume = 0;
-        }
-
-        this.currentVolume = currentVolume;
-    }
-
-
-    }
 
 
 
