@@ -50,6 +50,9 @@ public class Radio {
         if (currentStation <= minStation) {
             currentStation = 9;
         }
+        else {
+            this.currentStation = currentStation - 1;
+        }
     }
 
     public void setCurrentStation(int currentStation) {

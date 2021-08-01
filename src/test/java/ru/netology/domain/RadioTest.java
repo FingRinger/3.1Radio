@@ -48,13 +48,28 @@ public class RadioTest {
 
 
     @Test // станция перед 0-ой - 9-ая
-    public void shouldNineAfterZeroStation() {
+    public void shouldNineAfterMinStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
         radio.prevStation();
         assertEquals(9,radio.getCurrentStation());
     }
 
+    @Test //
+    public void shouldNineAfterLessMinStation() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(-63);
+        radio.prevStation();
+        assertEquals(9,radio.getCurrentStation());
+    }
+
+    @Test
+    public void shouldPrevStation() {
+      Radio radio = new Radio();
+      radio.setCurrentStation(3);
+      radio.prevStation();
+      assertEquals(2,radio.getCurrentStation());
+    }
 
     @Test
     public void shouldIncreaseVolume(){
